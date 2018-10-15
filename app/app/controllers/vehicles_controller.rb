@@ -18,4 +18,6 @@ class VehiclesController
     vehicle = vehicle.new(brand: brand, model: model, price: price)
     @vehicle_repository.add(vehicle)
   end
+
+  
 end

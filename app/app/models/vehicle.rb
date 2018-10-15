@@ -7,5 +7,14 @@ class Vehicle
     @brand = attributes[:brand]
     @model = attributes[:model]
     @price = attributes[:price]
+    @bought = attributes[:bought] || false
+  end
+
+  def bought?
+    @bought
+  end
+
+  def buyed!
+    @bought = true
   end
 end
