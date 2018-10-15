@@ -1,5 +1,5 @@
 class Order
-  attr_accessor :id, :vehicle, :customer, :employee, :total :delivered
+  attr_accessor :id, :vehicle, :customer, :employee, :total, :price_per_month
 
   def initialize(attributes = {})
     @id = attributes[:id]
@@ -16,5 +16,10 @@ class Order
 
   def deliver!
     @delivered = true
+  end
+
+  attr_accessor :salary
+  def price_per_month
+    @total / 12
   end
 end
