@@ -1,7 +1,7 @@
 class OrdersView
 
-  def ask_meal_id
-    puts "Enter meal ID:"
+  def ask_vehicle_id
+    puts "Enter vehicle ID:"
     gets.chomp.to_i
   end
 
@@ -22,13 +22,13 @@ class OrdersView
 
   def list(orders)
     orders.each do |order|
-      puts "(##{order.id})  #{order.customer.name} ordered #{order.meal.name} delivered by #{order.employee.username}"
+      puts "(##{order.id})  #{order.customer.name} buyed #{order.vehicle.name} selt by #{order.employee.username}"
     end
   end
 
-  def list_meals(meals)
-    meals.each do |meal|
-      puts "##{meal.id} #{meal.name} #{meal.price}"
+  def list_vehicles(vehicles)
+    vehicles.each do |vehicle|
+      puts "##{vehicle.id} #{vehicle.name} #{vehicle.price}"
     end
   end
 

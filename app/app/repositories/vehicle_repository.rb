@@ -45,5 +45,9 @@ class VehicleRepository
     end
   end
 
+  def json_parse
+    # TODO
+  end
+
 
 end

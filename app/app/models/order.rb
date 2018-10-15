@@ -1,11 +1,12 @@
 class Order
-  attr_accessor :id, :meal, :customer, :employee, :delivered
+  attr_accessor :id, :vehicle, :customer, :employee, :total :delivered
 
   def initialize(attributes = {})
     @id = attributes[:id]
-    @meal = attributes[:meal]
+    @vehicle = attributes[:vehicle]
     @customer = attributes[:customer]
     @employee = attributes[:employee]
+    @total = attributes[:total]
     @delivered = attributes[:delivered] || false
   end
 

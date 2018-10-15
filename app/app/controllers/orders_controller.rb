@@ -2,8 +2,8 @@ require_relative '../views/orders_view'
 
 class OrdersController
 
-  def initialize(meal_repository, employee_repository, customer_repository, order_repository)
-    @meal_repository = meal_repository
+  def initialize(vehicle_repository, employee_repository, customer_repository, order_repository)
+    @vehicle_repository = vehicle_repository
     @employee_repository = employee_repository
     @customer_repository = customer_repository
     @order_repository = order_repository
@@ -16,14 +16,14 @@ class OrdersController
   end
 
   def add
-    @view.list_meals(@meal_repository.all)
-    meal = @meal_repository.find(@view.ask_meal_id)
+    @view.list_vehicles(@vehicle_repository.all)
+    vehicle = @vehicle_repository.find(@view.ask_vehicle_id)
     @view.list_customers(@customer_repository.all)
     customer = @customer_repository.find(@view.ask_customer_id)
     @view.list_delivery_guys(@employee_repository.all_delivery_guys)
     employee = @employee_repository.find(@view.ask_employee_id)
 
-    order = Order.new(meal: meal, customer: customer, employee: employee)
+    order = Order.new(vehicle: vehicle, customer: customer, employee: employee)
     @order_repository.add(order)
   end
 
@@ -41,6 +41,10 @@ class OrdersController
     order = @order_repository.find(@view.ask_order_id)
     order.deliver!
     @order_repository.save_csv
+  end
+
+  def divided_price() # Inserir argumento vindo do model de pedidos
+    # TODO: Dividir o valor total do veiculo pelo numero N de parcelas 
   end
 
 end
