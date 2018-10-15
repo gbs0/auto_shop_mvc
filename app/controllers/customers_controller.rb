@@ -21,8 +21,8 @@ class CustomersController
 
   def add
     name = @view.ask_name
-    address = @view.ask_address
-    new_customer = Customer.new(name: name, address: address)
+    drive_license = @view.ask_drive_license
+    new_customer = Customer.new(name: name, drive_license: drive_license)
     @customer_repository.add(new_customer)
   end
 end

@@ -38,7 +38,7 @@ class OrdersView
     end
   end
 
-  def list_delivery_guys(salers)
+  def list_saler(salers)
     salers.each do |saler|
       puts "##{saler.id} #{saler.username}"
     end

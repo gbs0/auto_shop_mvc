@@ -12,7 +12,7 @@ require_relative 'app/controllers/orders_controller'
 customer_repository = CustomerRepository.new('data/customers.csv')
 customers_controller = CustomersController.new(customer_repository)
 
-vehicle_repository = VehicleRepository.new('data/meals.csv')
+vehicle_repository = VehicleRepository.new('data/vehicles.csv')
 vehicles_controller = VehiclesController.new(vehicle_repository)
 
 order_repository = OrderRepository.new('data/orders.csv')

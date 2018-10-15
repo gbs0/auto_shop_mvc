@@ -17,8 +17,8 @@ class Order
   def deliver!
     @delivered = true
   end
-
-  attr_accessor :salary
+  
+  #  attr_accessor :salary
   def price_per_month
     @total / 12
   end

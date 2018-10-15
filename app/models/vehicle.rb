@@ -8,6 +8,7 @@ class Vehicle
     @model = attributes[:model]
     @price = attributes[:price]
     @bought = attributes[:bought] || false
+    @bulletproof = attributes[:bulletproof] || false
   end
 
   def bought?
@@ -17,4 +18,13 @@ class Vehicle
   def buyed!
     @bought = true
   end
+
+  def bulletproof?
+    @bulletproof
+  end
+
+  def bulletproof!
+    @bulletproof = true
+  end
+
 end

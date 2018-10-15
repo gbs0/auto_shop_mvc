@@ -5,7 +5,7 @@ class VehicleRepository
 
   def initialize(csv_file)
     @csv_file = csv_file
-    @meals = []
+    @vehicles = []
     load_csv
   end
 

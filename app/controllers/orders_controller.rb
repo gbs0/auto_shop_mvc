@@ -43,7 +43,7 @@ class OrdersController
     @order_repository.save_csv
   end
 
-  def divided_price() # Inserir argumento vindo do model de pedidos
+  def price_per_month # Inserir argumento vindo do model de pedidos
     # TODO: Dividir o valor total do veiculo pelo numero N de parcelas 
   end
 

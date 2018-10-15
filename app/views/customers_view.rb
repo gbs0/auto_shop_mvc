@@ -15,7 +15,7 @@ class CustomersView
     gets.chomp
   end
 
-  def ask_address
+  def ask_drive_license
     puts "What's your address?"
     gets.chomp
   end
