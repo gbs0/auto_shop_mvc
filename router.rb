@@ -1,8 +1,8 @@
 # TODO: implement the router of your app.
 class Router
-  def initialize(customers_controller, meals_controller, orders_controller)
+  def initialize(customers_controller, vehicles_controller, orders_controller)
     @customers_controller = customers_controller
-    @meals_controller = meals_controller
+    @vehicles_controller = vehicles_controller
     @orders_controller = orders_controller
   end
 
@@ -33,8 +33,8 @@ class Router
 
   def dispatch(action)
     case action
-    when 1 then @meals_controller.add
-    when 2 then @meals_controller.list
+    when 1 then @vehicles_controller.add
+    when 2 then @vehicles_controller.list
 
     when 3 then @orders_controller.add
     when 4 then @orders_controller.list_my_orders

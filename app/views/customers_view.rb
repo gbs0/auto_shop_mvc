@@ -5,7 +5,7 @@ class CustomersView
     # puts "Avaliable Meals"
     # puts "------------------"
     customers.each do |customer|
-      puts "#{customer.id} - #{customer.name}: #{customer.address}"
+      puts "#{customer.id} - #{customer.name}: #{customer.driver_license}"
     end
     # puts "------------------"
   end

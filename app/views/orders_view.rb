@@ -1,28 +1,48 @@
 class OrdersView
-  def display(orders)
-    orders.each do |order|
-    puts "#{order.id} - #{order.meal.name} - #{order.employee.username} #{order.customer.name}"
-   end
-  end
 
-  def ask_employee_id
-    puts "What's your employee ID?"
-    gets.chomp
+  def ask_vehicle_id
+    puts "Enter vehicle ID:"
+    gets.chomp.to_i
   end
 
   def ask_customer_id
-    puts "What's the customer ID?"
-    gets.chomp
+    puts "Enter customer ID:"
+    gets.chomp.to_i
   end
 
-  def ask_meal_id
-    puts "What's the order ID?"
-    gets.chomp
+  def ask_employee_id
+    puts "Enter employee ID:"
+    gets.chomp.to_i
   end
 
   def ask_order_id
-    puts "What's the order ID?"
-    gets.chomp
+    puts "Enter order ID:"
+    gets.chomp.to_i
   end
+
+  def list(orders)
+    orders.each do |order|
+      puts "(##{order.id})  #{order.customer.name} buyed #{order.vehicle.name} selt by #{order.employee.username}"
+    end
+  end
+
+  def list_vehicles(vehicles)
+    vehicles.each do |vehicle|
+      puts "##{vehicle.id} #{vehicle.name} #{vehicle.price}"
+    end
+  end
+
+  def list_customers(customers)
+    customers.each do |customer|
+      puts "##{customer.id} #{customer.name}"
+    end
+  end
+
+  def list_delivery_guys(salers)
+    salers.each do |saler|
+      puts "##{saler.id} #{saler.username}"
+    end
+  end
+
 end
 

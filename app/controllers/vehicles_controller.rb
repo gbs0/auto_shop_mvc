@@ -1,7 +1,6 @@
 require_relative '../views/vehicles_view'
 
 class VehiclesController
-
   def initialize(vehicle_repository)
     @vehicle_repository = vehicle_repository
     @view = VehiclesView.new
@@ -18,6 +17,5 @@ class VehiclesController
     vehicle = vehicle.new(brand: brand, model: model, price: price)
     @vehicle_repository.add(vehicle)
   end
-
   
 end

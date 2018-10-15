@@ -1,13 +1,13 @@
 class Order
-  attr_accessor :id, :meal, :employee, :customer, :delivered
+  attr_accessor :id, :vehicle, :customer, :employee, :total, :delivered
 
-  def initialize(properties = {})
-    @id = properties[:id]
-    @delivered = properties[:delivered] || false
-    @cooked = properties[:cooked] || false
-    @meal = properties[:meal]
-    @employee = properties[:employee]
-    @customer = properties[:customer]
+  def initialize(attributes = {})
+    @id = attributes[:id]
+    @vehicle = attributes[:vehicle]
+    @customer = attributes[:customer]
+    @employee = attributes[:employee]
+    @total = attributes[:total]
+    @delivered = attributes[:delivered] || false
   end
 
   def delivered?
@@ -18,11 +18,8 @@ class Order
     @delivered = true
   end
 
-  def cooked?
-    @cooked 
-  end
-
-  def cook!
-    @cooked = true
+  attr_accessor :salary
+  def price_per_month
+    @total / 12
   end
 end
