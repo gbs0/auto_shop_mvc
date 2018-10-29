@@ -1,6 +1,8 @@
 // TODO: Build an awesome garage!
 const carForm = document.getElementById("new-car");
 const garage = "Drive-In";
+const getCar = document.getElementById("get-cars");
+
 
 carForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -27,6 +29,30 @@ carForm.addEventListener("submit", (event) => {
         fetchAllCars();
       });
 });
+
+getCar.addEventListener("click", (event) => {
+  alert("It worked");
+  console.log('event');
+  event.preventDefault();
+  const url = `https://parallelum.com.br/fipe/api/v1/carros/marcas`;
+  // const car = {
+  //     "brand": brand,
+  //     "model": model,
+  //     "owner": owner,
+  //     "plate": plate
+  // }
+
+  fetch(url, {
+  method: 'GET',
+  headers: {'Content-Type': 'application/json'}
+    })
+  	.then(response => response.json())
+  	.then((data) => {
+        console.log(data);
+      });
+});
+
+
 
 function carRow(car) {
   const row = `<div class="car">

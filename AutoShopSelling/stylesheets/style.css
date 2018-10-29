@@ -88,3 +88,7 @@ body {
 .car-destroy {
   align-self: flex-end;
 }
+
+#get-cars {
+  padding: 20px;
+}
