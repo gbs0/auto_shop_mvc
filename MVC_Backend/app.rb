@@ -19,8 +19,8 @@ vehicles_controller = VehiclesController.new(vehicle_repository)
 
 employee_repository = EmployeeRepository.new('data/employee.csv')
 
-order_repository = OrderRepository.new('data/orders.csv', vehicle_repository, employee_repository, customer_repository )
-orders_controller = OrdersController.new(order_repository)
+order_repository = OrderRepository.new('data/orders.csv', vehicle_repository, employee_repository, customer_repository)
+orders_controller = OrdersController.new(vehicle_repository, employee_repository, customer_repository, order_repository)
 
 require_relative 'router'
 
