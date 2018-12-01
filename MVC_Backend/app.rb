@@ -9,13 +9,17 @@ require_relative 'app/controllers/vehicles_controller'
 require_relative 'app/repositories/order_repository'
 require_relative 'app/controllers/orders_controller'
 
+require_relative 'app/repositories/employee_repository'
+
 customer_repository = CustomerRepository.new('data/customers.csv')
 customers_controller = CustomersController.new(customer_repository)
 
 vehicle_repository = VehicleRepository.new('data/vehicles.csv')
 vehicles_controller = VehiclesController.new(vehicle_repository)
 
-order_repository = OrderRepository.new('data/orders.csv')
+employee_repository = Employee.new('data/employee.csv')
+
+order_repository = OrderRepository.new('data/orders.csv', vehicle_repository, )
 orders_controller = OrdersController.new(order_repository)
 
 require_relative 'router'
