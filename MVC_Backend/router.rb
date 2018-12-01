@@ -18,15 +18,15 @@ class Router
 
   def print_actions
     system "clear"
-    puts ("-" * 10) + 'Patients' + ('-' * 10)
-    puts "1. Create Patient"
-    puts "2. List Patients"
-    puts ("-" * 10) + 'Rooms' + ('-' * 10)
-    puts "3. Create Room"
-    puts "4. List Rooms"
-    puts ("-" * 10) + 'Doctors' + ('-' * 10)
-    puts "5. Create Doctor"
-    puts "6. List Doctors"
+    puts ("-" * 10) + 'Vehicles' + ('-' * 10)
+    puts "1. Create a Vehicle"
+    puts "2. List Vehicles"
+    puts ("-" * 10) + 'Orders' + ('-' * 10)
+    puts "3. Create Order"
+    puts "4. List Orders"
+    puts ("-" * 10) + 'Costumers' + ('-' * 10)
+    puts "5. Create Costumer"
+    puts "6. List Costumers"
     puts '-' * 30
     puts "Choose an option:"
   end
