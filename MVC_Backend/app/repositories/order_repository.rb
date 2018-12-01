@@ -3,7 +3,7 @@ require 'pry-byebug'
 
 class OrderRepository
   CSV_OPTIONS = { headers: :first_row, header_converters: :symbol }
-  binding.pry
+  # binding.pry
   def initialize(csv_file, vehicle_repository, employee_repository, customer_repository)
     @customer_repository = customer_repository
     @vehicle_repository = vehicle_repository
@@ -12,6 +12,7 @@ class OrderRepository
     @orders = []
     load_csv
   end
+  binding.pry
 
   def add(order)
     order.id = @next_id
