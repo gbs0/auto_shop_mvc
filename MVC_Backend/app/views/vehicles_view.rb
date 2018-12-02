@@ -22,13 +22,13 @@ class VehiclesView
   end
 
   def list_vehicle 
-    response = self.class.get('/carros/marcas')
-    # (FipeAPI.new(car_brand[0], car_brand[1]))
-    # JSON.parse(get_response)
-    # Parse response as Array
-    response.each do |hash|
-      print "# #{hash['codigo']} | #{hash['nome']} \n"
-    end
+    # response = self.class.get('/carros/marcas')
+    # # (FipeAPI.new(car_brand[0], car_brand[1]))
+    # # JSON.parse(get_response)
+    # # Parse response as Array
+    # response.each do |hash|
+    #   print "# #{hash['codigo']} | #{hash['nome']} \n"
+    # end
     @code = gets.chomp.to_i
     list_models
   end
@@ -41,12 +41,12 @@ class VehiclesView
   def list_models
     model_url = self.class.get("/carros/marcas/#{@code}/modelos")
     model_url.each do |hash|
-      # print "# #{hash['codigo']} | #{hash['nome']} \n"
-      p "#{hash} \n"
-      # TEST => Return as hash
-      firts_response = hash[1][0]
+      print "# #{hash[1]['codigo']} | #{hash[1]['nome']} \n"
+      # p "#{hash} \n"
+      
+      # TEST => Return first hash
+      # p firts_response = hash[1][0]
       binding.pry
-      # second_response = hash[0]
     end
   end
 end
