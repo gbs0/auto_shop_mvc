@@ -30,7 +30,6 @@ class VehiclesView
       print "# #{hash['codigo']} | #{hash['nome']} \n"
     end
     @code = gets.chomp.to_i
-    binding.pry
     list_models
   end
 
@@ -44,6 +43,10 @@ class VehiclesView
     model_url.each do |hash|
       # print "# #{hash['codigo']} | #{hash['nome']} \n"
       p "#{hash} \n"
+      # TEST => Return as hash
+      firts_response = hash[1][0]
+      binding.pry
+      # second_response = hash[0]
     end
   end
 end
