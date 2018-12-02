@@ -4,6 +4,7 @@ class Vehicle
 
   def initialize(attributes = {})
     @id = attributes[:id]
+    @code = attributes[:code]
     @brand = attributes[:brand]
     @model = attributes[:model]
     @price = attributes[:price]

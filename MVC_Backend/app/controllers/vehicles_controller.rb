@@ -12,7 +12,7 @@ class VehiclesController
   end
 
   def add
-    name = @view.ask_name
+    name = @view.ask_brand
     price = @view.ask_price
     vehicle = vehicle.new(brand: brand, model: model, price: price)
     @vehicle_repository.add(vehicle)
