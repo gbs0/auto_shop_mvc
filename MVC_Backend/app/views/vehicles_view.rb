@@ -21,8 +21,9 @@ class VehiclesView
   end
 
   def list_vehicle 
-    p self.class.get('/carros/marcas')
+    parsed_response = self.class.get('/carros/marcas')
     # (FipeAPI.new(car_brand[0], car_brand[1]))
+    p parsed_response
   end
 
   def ask_price
