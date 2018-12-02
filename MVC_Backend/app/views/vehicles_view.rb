@@ -1,4 +1,5 @@
 require 'httparty'
+require 'json'
 
 class VehiclesView
   include HTTParty
@@ -17,17 +18,19 @@ class VehiclesView
   def ask_brand
     puts "Vehicle brand?"
     # gets.chomp
-    list_vehicle.call
+    list_vehicle
   end
 
   def list_vehicle 
-    parsed_response = self.class.get('/carros/marcas')
+    
+    self.class.get('/carros/marcas')
     # (FipeAPI.new(car_brand[0], car_brand[1]))
-    p parsed_response
+    # JSON.parse(get_response)
+
   end
 
   def ask_price
     puts "vehicle price?"
-    gets.chomp.to_i
+    # gets.chomp.to_i
   end
 end
