@@ -29,10 +29,21 @@ class VehiclesView
     response.each do |hash|
       print "# #{hash['codigo']} | #{hash['nome']} \n"
     end
+    @code = gets.chomp.to_i
+    binding.pry
+    list_models
   end
 
   def ask_price
     puts "vehicle price?"
     # gets.chomp.to_i
+  end
+
+  def list_models
+    model_url = self.class.get("/carros/marcas/#{@code}/modelos")
+    model_url.each do |hash|
+      # print "# #{hash['codigo']} | #{hash['nome']} \n"
+      p "#{hash} \n"
+    end
   end
 end
