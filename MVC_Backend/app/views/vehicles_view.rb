@@ -41,11 +41,13 @@ class VehiclesView
   def list_models
     model_url = self.class.get("/carros/marcas/#{@code}/modelos")
     model_url.each do |hash|
-      print "# #{hash[1]['codigo']} | #{hash[1]['nome']} \n"
+      print "# #{hash[1][0]['codigo']} | #{hash[1][0]['nome']} \n"
       # p "#{hash} \n"
-      
-      # TEST => Return first hash
-      # p firts_response = hash[1][0]
+
+      # TEST => Return first element hash
+      firts_response = hash[1][0]
+      # TEST => Return array element
+      second_response = hash[1]
       binding.pry
     end
   end
