@@ -1,4 +1,7 @@
+require 'httparty'
+
 class VehiclesView
+
 
   def display(vehicles)
     # puts "------------------"
@@ -10,9 +13,17 @@ class VehiclesView
     # puts "------------------"
   end
 
-  def ask_name
-    puts "vehicle name?"
-    gets.chomp
+  def ask_brand
+    include HTTParty
+    base_uri "https://parallelum.com.br/fipe/api/v1/"
+    puts "Vehicle brand?"
+    # gets.chomp
+    p self.class.get('/carros/marcas')
+    # (FipeAPI.new(car_brand[0], car_brand[1]))
+  end
+
+  def list_vehicle
+
   end
 
   def ask_price
