@@ -48,6 +48,7 @@ class VehiclesView
       response_one = hash[1][0]
       # TEST => Return array element
       response_two = hash[1]
+      # TEST => 'm' Return a string
       response_three = hash[0][0]
       response_four = hash[0][1]
       binding.pry
