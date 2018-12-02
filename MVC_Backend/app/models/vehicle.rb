@@ -1,9 +1,10 @@
 class Vehicle
-  attr_accessor :id, :bought
+  attr_accessor :id, :bought, :code
   attr_reader :brand, :model, :price, :bulletproof 
 
   def initialize(attributes = {})
     @id = attributes[:id]
+    @code = attributes[:code]
     @brand = attributes[:brand]
     @model = attributes[:model]
     @price = attributes[:price]
