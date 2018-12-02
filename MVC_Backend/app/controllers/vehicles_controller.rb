@@ -1,3 +1,5 @@
+require 'httparty'
+
 require_relative '../views/vehicles_view'
 
 class VehiclesController
