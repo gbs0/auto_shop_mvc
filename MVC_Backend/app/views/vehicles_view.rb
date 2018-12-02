@@ -16,8 +16,7 @@ class VehiclesView
   end
 
   def ask_brand
-    puts "Vehicle brand?"
-    # gets.chomp
+    puts "Select Vehicle Brand"
     list_vehicle
   end
 
@@ -29,8 +28,8 @@ class VehiclesView
     # response.each do |hash|
     #   print "# #{hash['codigo']} | #{hash['nome']} \n"
     # end
-    @code = gets.chomp.to_i
-    list_models
+    code = gets.chomp.to_i
+    list_models(code)
   end
 
   def ask_price
@@ -38,16 +37,19 @@ class VehiclesView
     # gets.chomp.to_i
   end
 
-  def list_models
-    model_url = self.class.get("/carros/marcas/#{@code}/modelos")
+  def list_models(code)
+    model_url = self.class.get("/carros/marcas/#{code}/modelos")
     model_url.each do |hash|
-      print "# #{hash[1][0]['codigo']} | #{hash[1][0]['nome']} \n"
+      # Print models and code
+      # print "# #{hash[1][0]['codigo']} | #{hash[1][0]['nome']} | \n"
       # p "#{hash} \n"
 
       # TEST => Return first element hash
-      firts_response = hash[1][0]
+      response_one = hash[1][0]
       # TEST => Return array element
-      second_response = hash[1]
+      response_two = hash[1]
+      response_three = hash[0][0]
+      response_four = hash[0][1]
       binding.pry
     end
   end
