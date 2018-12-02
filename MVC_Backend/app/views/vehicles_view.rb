@@ -22,13 +22,12 @@ class VehiclesView
   end
 
   def list_vehicle 
-    
     response = self.class.get('/carros/marcas')
     # (FipeAPI.new(car_brand[0], car_brand[1]))
     # JSON.parse(get_response)
     # Parse response as Array
-    response.each do |key, value|
-      print "Brand: #{key} | Code: #{value}" 
+    response.each do |hash|
+      print "# #{hash['codigo']} | #{hash['nome']} \n"
     end
   end
 
