@@ -42,7 +42,7 @@ class VehiclesView
     model_url = self.class.get("/carros/marcas/#{code}/modelos")
     model_url.each do |hash|
       # Print models and code
-      print "# #{hash[1]['codigo']} | #{hash[1]['nome']} | \n"
+      print "# #{hash[1][0]['codigo']} | #{hash[1][0]['nome']} | \n"
       # Pruint first model name and code
       # print "# #{hash[1][0]['codigo']} | #{hash[1][0]['nome']} | \n"
 
@@ -50,7 +50,7 @@ class VehiclesView
       response_one = hash[1][0]
       # TEST => Return array element
       response_two = hash[1]
-      binding.pry
+      # binding.pry
     end
   end
 end
