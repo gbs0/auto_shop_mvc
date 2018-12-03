@@ -32,11 +32,6 @@ class VehiclesView
     list_models(code)
   end
 
-  def ask_price
-    puts "vehicle price?"
-    # gets.chomp.to_i
-  end
-
   def list_models(code)
     # // GET METHOD FOR 'MODELOS URL'
     model_url = self.class.get("/carros/marcas/#{code}/modelos")
@@ -53,4 +48,11 @@ class VehiclesView
       # binding.pry
     end
   end
+
+  def ask_price
+    puts "vehicle price?"
+    # gets.chomp.to_i
+  end
+
+  
 end
