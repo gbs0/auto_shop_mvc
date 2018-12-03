@@ -38,19 +38,18 @@ class VehiclesView
   end
 
   def list_models(code)
+    # // GET METHOD FOR 'MODELOS URL'
     model_url = self.class.get("/carros/marcas/#{code}/modelos")
     model_url.each do |hash|
       # Print models and code
+      print "# #{hash[1]['codigo']} | #{hash[1]['nome']} | \n"
+      # Pruint first model name and code
       # print "# #{hash[1][0]['codigo']} | #{hash[1][0]['nome']} | \n"
-      # p "#{hash} \n"
 
       # TEST => Return first element hash
       response_one = hash[1][0]
       # TEST => Return array element
       response_two = hash[1]
-      # TEST => 'm' Return a string
-      response_three = hash[0][0]
-      response_four = hash[0][1]
       binding.pry
     end
   end
