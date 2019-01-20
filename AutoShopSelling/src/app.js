@@ -33,7 +33,7 @@ carForm.addEventListener("submit", (event) => {
 getCar.addEventListener("click", (event) => {
   console.log(event);
   event.preventDefault();
-  const urlFip = `https://parallelum.com.br/fipe/api/v1/carros/`;
+  const urlFipe = `https://parallelum.com.br/fipe/api/v1/carros/`;
   // const car = {
   //     "brand": brand,
   //     "model": model,
@@ -56,7 +56,7 @@ getCar.addEventListener("click", (event) => {
 function carRow(car) {
   const row = `<div class="car">
           <div class="car-image">
-            <img src="http://loremflickr.com/280/280/${car.brand} ${car.model}" />
+            <img src="http://loremflickr.com/280/280/${car.brand.toLowerCase()}_${car.model.toLowerCase()}" />
           </div>
           <div class="car-info">
             <h4>${car.brand} ${car.model}</h4>
