@@ -4,6 +4,7 @@ const garage = "Drive-In";
 const getCar = document.getElementById("get-cars");
 
 
+// Get Car from Form
 carForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const brand = document.getElementById("brand").value;
@@ -30,6 +31,7 @@ carForm.addEventListener("submit", (event) => {
       });
 });
 
+// Random Button
 getCar.addEventListener("click", (event) => {
   console.log(event);
   event.preventDefault();
@@ -52,7 +54,7 @@ getCar.addEventListener("click", (event) => {
 });
 
 
-
+// Add car in index page 
 function carRow(car) {
   const row = `<div class="car">
           <div class="car-image">
@@ -62,12 +64,13 @@ function carRow(car) {
             <h4>${car.brand} ${car.model}</h4>
             <p><strong>Owner:</strong> ${car.owner}</p>
             <p><strong>Plate:</strong> ${car.plate}</p>
-            <p><a href='#' class='btn remove-btn' data-id='${car.id}' >REMOVE</a></p>
+            <p><a href='#' class='btn remove-btn' data-id='${car.id}'>REMOVE</a></p>
           </div>
         </div>`
   return row;
 };
 
+// Remove button
 function bindRemoveBtn() {
   document.querySelectorAll('.remove-btn').forEach((btn) => {
     btn.addEventListener('click', (event) => {
@@ -84,7 +87,7 @@ function bindRemoveBtn() {
   });
 }
 
-
+// Fetch all cars from Garage API
 function fetchAllCars() {
   const url = `https://wagon-garage-api.herokuapp.com/${garage}/cars`;
   const carsList = document.querySelector('.cars-list');
