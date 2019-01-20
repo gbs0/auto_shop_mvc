@@ -58,7 +58,8 @@ getCar.addEventListener("click", (event) => {
 function carRow(car) {
   const row = `<div class="car">
           <div class="car-image">
-            <img src="http://loremflickr.com/280/280/${car.brand.toLowerCase()}_${car.model.toLowerCase()}" />
+            <img src="http://loremflickr.com/280/280/${car.brand.toLowerCase()}_${car.model.toLowerCase()}"
+            class="car-img-tag"/>
           </div>
           <div class="car-info">
             <h4>${car.brand} ${car.model}</h4>
