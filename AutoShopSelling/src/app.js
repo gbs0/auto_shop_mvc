@@ -35,7 +35,7 @@ carForm.addEventListener("submit", (event) => {
 getCar.addEventListener("click", (event) => {
   console.log(event);
   event.preventDefault();
-  const urlFipe = `https://parallelum.com.br/fipe/api/v1/carros/`;
+  const urlFipe = `https://parallelum.com.br/fipe/api/v1/carros/marcas`;
   // const car = {
   //     "brand": brand,
   //     "model": model,
@@ -43,7 +43,7 @@ getCar.addEventListener("click", (event) => {
   //     "plate": plate
   // }
 
-  fetch(urlFip, {
+  fetch(urlFipe, {
   method: 'GET',
   headers: {'Content-Type': 'application/json'}
     })
